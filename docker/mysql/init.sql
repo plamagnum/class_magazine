@@ -74,10 +74,10 @@ CREATE TABLE IF NOT EXISTS attendance (
 
 -- Користувачі (пароль для всіх: password123)
 INSERT INTO users (name, email, password_hash, role) VALUES
-('Адміністратор Системи', 'admin@school.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
-('Іванова Олена Петрівна', 'ivanova@school.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'teacher'),
-('Петренко Андрій Васильович', 'petrenko@school.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'teacher'),
-('Коваленко Марія Іванівна', 'kovalenko@school.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'teacher');
+('Адміністратор Системи', 'admin@school.com', '$2y$10$Vwtu5kl72xPr94RWOR/FTuZvc0DoLQGyfrWcNTg4.1MgI0.jVLGiW', 'admin'),
+('Іванова Олена Петрівна', 'ivanova@school.com', '$2y$10$Vwtu5kl72xPr94RWOR/FTuZvc0DoLQGyfrWcNTg4.1MgI0.jVLGiW', 'teacher'),
+('Петренко Андрій Васильович', 'petrenko@school.com', '$2y$10$Vwtu5kl72xPr94RWOR/FTuZvc0DoLQGyfrWcNTg4.1MgI0.jVLGiW', 'teacher'),
+('Коваленко Марія Іванівна', 'kovalenko@school.com', '$2y$10$Vwtu5kl72xPr94RWOR/FTuZvc0DoLQGyfrWcNTg4.1MgI0.jVLGiW', 'teacher');
 
 -- Класи
 INSERT INTO classes (name, year) VALUES

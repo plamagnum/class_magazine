@@ -44,6 +44,7 @@ class SubjectController extends Controller {
         $teachers = $this->userModel->getTeachers();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $data = [
                 'name' => $_POST['name'] ?? '',
                 'description' => $_POST['description'] ?? '',
@@ -87,6 +88,7 @@ class SubjectController extends Controller {
         $teachers = $this->userModel->getTeachers();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $data = [
                 'name' => $_POST['name'] ?? '',
                 'description' => $_POST['description'] ?? '',
@@ -118,6 +120,7 @@ class SubjectController extends Controller {
         $this->requireRole('admin');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $this->model->delete($id);
             $this->setFlash('success', 'Предмет успішно видалено');
         }

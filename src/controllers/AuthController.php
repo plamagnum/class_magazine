@@ -16,6 +16,8 @@ class AuthController extends Controller {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
+            
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
 
@@ -42,6 +44,8 @@ class AuthController extends Controller {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
+            
             $name = $_POST['name'] ?? '';
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';

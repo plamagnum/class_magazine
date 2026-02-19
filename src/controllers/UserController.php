@@ -37,6 +37,7 @@ class UserController extends Controller {
         $this->requireRole('admin');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $name = $_POST['name'] ?? '';
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
@@ -73,6 +74,7 @@ class UserController extends Controller {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $data = [
                 'name' => $_POST['name'] ?? '',
                 'email' => $_POST['email'] ?? '',
@@ -109,6 +111,7 @@ class UserController extends Controller {
         $this->requireRole('admin');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             // Не можна видалити себе
             if ($id == Auth::id()) {
                 $this->setFlash('error', 'Ви не можете видалити себе');

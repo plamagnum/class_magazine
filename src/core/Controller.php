@@ -10,11 +10,6 @@ class Controller {
     protected function view($viewPath, $data = []) {
         extract($data);
         
-        // Перевірка CSRF токену для POST запитів
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->validateCsrfToken();
-        }
-        
         ob_start();
         require __DIR__ . '/../views/' . $viewPath . '.php';
         $content = ob_get_clean();

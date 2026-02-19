@@ -47,6 +47,7 @@ class StudentController extends Controller {
         $classes = $this->classModel->getAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $data = [
                 'first_name' => $_POST['first_name'] ?? '',
                 'last_name' => $_POST['last_name'] ?? '',
@@ -87,6 +88,7 @@ class StudentController extends Controller {
         $classes = $this->classModel->getAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $data = [
                 'first_name' => $_POST['first_name'] ?? '',
                 'last_name' => $_POST['last_name'] ?? '',
@@ -120,6 +122,7 @@ class StudentController extends Controller {
         $this->requireAuth();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $this->model->delete($id);
             $this->setFlash('success', 'Учня успішно видалено');
         }

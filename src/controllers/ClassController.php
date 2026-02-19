@@ -36,6 +36,7 @@ class ClassController extends Controller {
         $this->requireRole('admin');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $data = [
                 'name' => $_POST['name'] ?? '',
                 'year' => $_POST['year'] ?? date('Y')
@@ -70,6 +71,7 @@ class ClassController extends Controller {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $data = [
                 'name' => $_POST['name'] ?? '',
                 'year' => $_POST['year'] ?? date('Y')
@@ -99,6 +101,7 @@ class ClassController extends Controller {
         $this->requireRole('admin');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $this->model->delete($id);
             $this->setFlash('success', 'Клас успішно видалено');
         }

@@ -66,6 +66,7 @@ class GradeController extends Controller {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $data = [
                 'student_id' => $_POST['student_id'] ?? '',
                 'subject_id' => $_POST['subject_id'] ?? '',
@@ -115,6 +116,7 @@ class GradeController extends Controller {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $data = [
                 'student_id' => $_POST['student_id'] ?? '',
                 'subject_id' => $_POST['subject_id'] ?? '',
@@ -151,6 +153,7 @@ class GradeController extends Controller {
         $this->requireAuth();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->validateCsrfToken();
             $this->model->delete($id);
             $this->setFlash('success', 'Оцінку успішно видалено');
         }
